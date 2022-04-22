@@ -10,8 +10,13 @@ defineProps({
 const count = ref(0)
 
 onMounted(() => {
-  const p = new Pose();
+  const p = new Pose({
+      locateFile: (file) =>
+        `https://cdn.jsdelivr.net/npm/@mediapipe/pose@0.5.1635988162/${file}`,
+    });
   const f = new FPS();
+  console.log(p);
+  console.log(f);
 })
 </script>
 
